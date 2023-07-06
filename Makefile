@@ -1,6 +1,8 @@
 CC = g++
 CFLAGS = -std=c++11
 
+all: server client
+
 server: server.cpp
 	$(CC) $(CFLAGS) server.cpp -o server
 
