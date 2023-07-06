@@ -1,13 +1,13 @@
-CC=g++
-CFLAGS=-c -Wall
+CC = g++
+CFLAGS = -std=c++11
 
-all: server
+server: server.cpp
+	$(CC) $(CFLAGS) server.cpp -o server
 
-server: server.o
-	$(CC) server.o -o server
+client: client.cpp
+	$(CC) $(CFLAGS) client.cpp -o client
 
-server.o: server.cpp
-	$(CC) $(CFLAGS) server.cpp
+.PHONY: clean
 
 clean:
-	rm -rf *.o server
+	rm -f server client
